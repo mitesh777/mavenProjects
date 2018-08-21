@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
+<fullyQualifiedTypeName name="com.pratian.libraryapp.dao.LibraryDao"/>
+<fullyQualifiedTypeName name="com.pratian.libraryapp.services.LibraryService"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="com.pratian.libraryapp.model.User"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.pratian.libraryapp.model.Book"/>
+<fullyQualifiedTypeName name="com.pratian.libraryapp.model.Author"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.Savings"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.AccountFactory"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.exceptions.InActiveAccountException"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.exceptions.InvalidPinException"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.exceptions.InsufficientBalanceException"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.Account"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Generated"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
+<fullyQualifiedTypeName name="javax.persistence.DiscriminatorColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.AccountManager"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.PriviligeType"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.AccountType"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.dao.AccountDAO"/>
+<fullyQualifiedTypeName name="com.pratian.BankApp.account.IAccount"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="com.mitesh.productapp.entities.Product"/>
+<fullyQualifiedTypeName name="com.mitesh.productapp.dao.UserDAOImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+</qualifiedTypeNameHistroy>

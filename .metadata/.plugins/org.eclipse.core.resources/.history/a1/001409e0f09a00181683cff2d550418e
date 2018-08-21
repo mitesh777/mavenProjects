@@ -1,0 +1,11 @@
+package com.pratian.BankApp.account;
+
+public class Current extends Account{
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.pratian.BankApp.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+public class AccountDAO {
+	
+	EntityManagerFactory factory;
+
+	public AccountDAO(EntityManagerFactory factory) {
+		super();
+		this.factory = factory;
+	}
+	
+//	public persistAccount(Account account) {
+//		EntityManager em= new
+//	}
+	
+	//add further methods
+	
+}

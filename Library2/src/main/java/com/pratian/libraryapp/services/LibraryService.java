@@ -1,0 +1,19 @@
+package com.pratian.libraryapp.services;
+
+import java.util.List;
+
+import com.pratian.libraryapp.model.Author;
+import com.pratian.libraryapp.model.Book;
+import com.pratian.libraryapp.model.User;
+
+public interface LibraryService {
+	void addBook(Book book);
+	//helloo
+	Book getBookByISBN(String isbn);
+	
+	List<Book> getAllBooks();
+	int validateUser(User user);
+	int addUser(User user);
+	List<Author> getAllAuthors();
+
+}

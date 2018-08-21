@@ -1,0 +1,12 @@
+package com.pratian.BankApp.account;
+
+public class Savings extends Account{
+
+	public Savings() {
+		super();
+		// TODO Auto-generated constructor stub
+	} 
+
+	
+	
+}

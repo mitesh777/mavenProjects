@@ -1,0 +1,69 @@
+package com.mitesh.productapp.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import com.mitesh.productapp.entities.Product;
+import com.pratian.libraryapp.model.User;
+
+
+public class UserDAOImpl {
+
+	EntityManagerFactory factory;
+
+	public UserDAOImpl(EntityManagerFactory factory) {
+		super();
+		this.factory = factory;
+	}
+
+	public void addProduct(Product product) {
+		EntityManager entityManager = factory.createEntityManager();
+		// User user = new User("someuser2","password2123");
+		entityManager.getTransaction().begin();
+		entityManager.persist(product);
+		entityManager.getTransaction().commit();
+		System.out.println("added");
+	}
+
+	
+	public List<Product> fetchAllProducts() {
+		// TODO Auto-generated method stub
+		EntityManager entityManager = factory.createEntityManager();
+		TypedQuery<Product> query = entityManager.createQuery("from Product", Product.class);
+		List<Product> products= query.getResultList();
+		entityManager.close();
+		return products;
+	}
+	
+	public List<Product> getByCategories(Product product) {
+		// TODO Auto-generated method stub
+		String category= product.getCategory();
+		EntityManager entityManager = factory.createEntityManager();
+
+		String query = "select u from Product u where u.category=?1";
+		// query.setString("value", "Some value with : in it");
+		TypedQuery<Product> q = entityManager.createQuery(query, User.class);
+		q.setParameter(1, username1);
+		q.setParameter(2, password1);
+		System.out.println("here i was");
+
+		if (q.getResultList().size() > 0) {
+			return 0;
+		}
+
+		query = "select u from User u where u.username =?1";
+		q = entityManager.createQuery(query, User.class);
+		q.setParameter(1, username1);
+		// q.setParameter(2, password1);
+		if (q.getResultList().size() > 0) {
+			return 1;
+		}
+		return 2;
+	}
+	
+
+}

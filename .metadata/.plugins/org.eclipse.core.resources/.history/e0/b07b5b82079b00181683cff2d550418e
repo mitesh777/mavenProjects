@@ -1,0 +1,23 @@
+package com.pratian.BankApp.client;
+
+import java.util.Date;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.pratian.BankApp.account.AccountManager;
+import com.pratian.BankApp.account.AccountType;
+import com.pratian.BankApp.account.IAccount;
+import com.pratian.BankApp.account.PriviligeType;
+import com.pratian.BankApp.dao.AccountDAO;
+
+public class ClientAccount {
+	public static void main(String[] args) {
+		//add account
+		AccountManager manager = new AccountManager();
+		IAccount acc = manager.createAccount("name1", "1234", new Date(), 1234.51, PriviligeType.GOLD, AccountType.CURRENT);
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("EcommerceApp");
+		AccountDAO dao = new AccountDAO(factory);
+		dao.persistAccount(acc);
+	}
+}

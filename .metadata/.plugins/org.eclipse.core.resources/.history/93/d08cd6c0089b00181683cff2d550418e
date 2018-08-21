@@ -1,0 +1,49 @@
+package com.pratian.BankApp.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
+
+import com.pratian.BankApp.account.Account;
+import com.pratian.BankApp.account.IAccount;
+
+public class AccountDAO {
+	
+	EntityManagerFactory factory;
+
+	public AccountDAO(EntityManagerFactory factory) {
+		super();
+		this.factory = factory;
+	}
+	
+	public void persistAccount(IAccount account) {
+		EntityManager entityManager= factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.persist(account);
+		entityManager.getTransaction().commit();
+		System.out.println("added account");
+	}
+	
+	public void updateAccount(IAccount account) {
+		EntityManager entityManager= factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.merge(account);
+		entityManager.getTransaction().commit();
+		System.out.println("added account");
+	}
+	
+	public Account getAccount(String accNo) {
+		EntityManager entityManager= factory.createEntityManager();
+		String query = "select acc from Account acc where accNo=?1";
+		TypedQuery<Account> tq = entityManager.createQuery(query,Account.class);
+		tq.setParameter(1, accNo)
+		if(!tq.getResultList().isEmpty()) {
+			return tq.getSingleResult();
+		}
+		return null;
+	}
+	
+	
+	//add further methods
+	
+}

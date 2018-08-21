@@ -1,0 +1,9 @@
+com/pratian/libraryapp/controllers/HomeController.class
+com/pratian/libraryapp/dao/impl/DAOImpl.class
+com/pratian/libraryapp/model/User.class
+com/pratian/libraryapp/model/BasketItem.class
+com/pratian/libraryapp/services/impl/ServicesImpl.class
+com/pratian/libraryapp/dao/LibraryDao.class
+com/pratian/libraryapp/services/LibraryService.class
+com/pratian/libraryapp/model/Author.class
+com/pratian/libraryapp/model/Book.class

@@ -1,0 +1,18 @@
+package com.pratian.BankApp.account;
+
+import java.util.Date;
+
+public class Current extends Account{
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		this.accNo="CUR"+super.generateAccNumber();
+		this.active=true;
+		this.dateOfOpening=new Date();
+	} 
+	
+	public String getAccTypes() {
+		return "current";
+	}
+}

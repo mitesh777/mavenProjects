@@ -1,0 +1,9 @@
+package com.pratian.BankApp.account;
+
+import java.util.Date;
+
+public class AccountManager {
+	public Account createAccount(String name, String pin, Date dateOfOpening, double balance, PriviligeType privligeType) {
+		
+	}
+}

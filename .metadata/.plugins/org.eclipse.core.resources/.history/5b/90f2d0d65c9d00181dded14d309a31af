@@ -1,0 +1,8 @@
+package com.mitesh.productapp.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Product {
+	
+}

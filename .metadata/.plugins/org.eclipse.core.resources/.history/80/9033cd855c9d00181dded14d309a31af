@@ -1,0 +1,5 @@
+package com.mitesh.productapp.entities;
+
+public class Product {
+
+}

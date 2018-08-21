@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ShowAllProducts</servlet-name>
+  	<display-name>ShowAllProducts</display-name>
+  	<description></description>
+  	<servlet-class>com.mitesh.productapp.controllers.ShowAllProducts</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowByCategory</servlet-name>
+  	<display-name>ShowByCategory</display-name>
+  	<description></description>
+  	<servlet-class>com.mitesh.productapp.controllers.ShowByCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ShowAllProducts</servlet-name>
+  	<url-pattern>/ShowAllProducts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowByCategory</servlet-name>
+  	<url-pattern>/ShowByCategory</url-pattern>
+  </servlet-mapping>
+</web-app>

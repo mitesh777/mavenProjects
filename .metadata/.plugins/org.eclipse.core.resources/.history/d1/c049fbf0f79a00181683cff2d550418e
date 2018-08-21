@@ -1,0 +1,33 @@
+package com.pratian.BankApp.account;
+
+import java.util.Date;
+
+import com.pratian.BankApp.exceptions.InActiveAccountException;
+import com.pratian.BankApp.exceptions.InsufficientBalanceException;
+import com.pratian.BankApp.exceptions.InvalidPinException;
+
+public class AccountManager {
+	
+	public IAccount createAccount(String name, String pin, Date dateOfOpening,
+			double balance, PriviligeType privligeType, AccountType accountType) {
+		IAccount account = AccountFactory.create(name, pin, dateOfOpening, balance, privligeType, accountType);
+		account.open();
+		return account;
+	
+	}
+	
+	public void withdraw(IAccount account,String pin,double amount) throws InActiveAccountException,
+	InvalidPinException, InsufficientBalanceException {
+		Account accountObj = (Account)account;
+		if(!accountObj.isActive()) {
+			throw new InActiveAccountException("Sorry account is inactive");
+		}
+		if(!accountObj.getPin().equals(pin)) {
+			throw new InvalidPinException("Sorry pin wrong");
+		}
+		if(accountObj.getBalance()<amount) {
+			throw new InvalidPinException("Sorry pin wrong");
+		}
+	}
+	
+}

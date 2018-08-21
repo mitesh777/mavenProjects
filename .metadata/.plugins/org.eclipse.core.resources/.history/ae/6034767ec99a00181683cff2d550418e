@@ -1,0 +1,32 @@
+package com.pratian.libraryapp.dao.impl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.pratian.libraryapp.dao.LibraryDao;
+import com.pratian.libraryapp.model.Book;
+
+public class DAOImpl implements  LibraryDao{
+
+	public void persistBook(Book book) {
+		// TODO Auto-generated method stub
+		EntityManager entityManager = factory.createEntityManager();
+        //User user = new User("someuser2","password2123");
+        entityManager.getTransaction().begin();
+        entityManager.persist(book);
+        entityManager.getTransaction().commit();
+        System.out.println("added Book");	
+	}
+
+	public Book fetchBookByISBN(String isbn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Book> fetchAllBooks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

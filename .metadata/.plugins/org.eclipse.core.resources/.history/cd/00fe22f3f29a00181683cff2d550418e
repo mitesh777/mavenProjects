@@ -1,0 +1,6 @@
+package com.pratian.BankApp.account;
+
+public interface IAccount {
+	public void open();
+	public void close();
+}

@@ -1,0 +1,5 @@
+package com.pratian.libraryapp.dao.impl;
+
+public class DAOImpl {
+
+}

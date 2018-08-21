@@ -1,0 +1,32 @@
+package com.pratian.libraryapp.controllers;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.pratian.libraryapp.model.Author;
+import com.pratian.libraryapp.model.Book;
+import com.pratian.libraryapp.model.User;
+import com.pratian.libraryapp.services.LibraryService;
+
+@Controller
+public class HomeController {
+	@Autowired
+	LibraryService service;
+	
+	@RequestMapping(value = "/")
+	public String home() {
+//		Book book = new Book("123","name123","peng","fiction",123.51,51);
+//		book.addAuthor(new Author("hello"));
+//		service.addBook(book);
+		System.out.println("hello");
+		return "home";
+	}
+	@RequestMapping(value = "/login.html")
+	public String login(Model model) {
+		User user = new User();
+		model.addAttribute("userObj", user);
+		System.out.println("in login get");
+		return "home";
+	}
+}

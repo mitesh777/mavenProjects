@@ -1,0 +1,19 @@
+package com.pratian.BankApp.account;
+
+import java.util.Date;
+
+public class AccountManager {
+	public Account createAccount(String name, String pin, Date dateOfOpening,
+			double balance, PriviligeType privligeType, AccountType accountType) {
+		
+		Account account = null;
+		switch(accountType) {
+			case SAVINGS: account = new Savings(name, pin, dateOfOpening, balance, privligeType);
+				break;
+			case CURRENT: account = new Current(name, pin, dateOfOpening, balance, privligeType);
+		}
+		account.open();
+		return account;
+	
+	}
+}

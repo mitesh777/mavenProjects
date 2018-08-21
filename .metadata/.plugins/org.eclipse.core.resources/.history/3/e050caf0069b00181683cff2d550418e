@@ -1,0 +1,5 @@
+package com.pratian.BankApp.client;
+
+public class ClientAccount {
+
+}

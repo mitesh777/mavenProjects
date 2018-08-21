@@ -1,0 +1,15 @@
+package com.pratian.BankApp.client;
+
+import java.util.Date;
+
+import com.pratian.BankApp.account.AccountManager;
+import com.pratian.BankApp.account.AccountType;
+import com.pratian.BankApp.account.PriviligeType;
+
+public class ClientAccount {
+	public static void main(String[] args) {
+		//add account
+		AccountManager manager = new AccountManager();
+		manager.createAccount("name1", "1234", new Date(), 1234.51, PriviligeType.GOLD, AccountType.CURRENT);
+	}
+}

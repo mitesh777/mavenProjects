@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+</head>
+<body>
+	${message}
+	<form:form action="addBook.html" method="post" modelAttribute="bookObj">
+		<form:label path="title"> Title</form:label>
+		<form:input path="title"/>
+		<br>
+		
+		<form:label path="ISBN"> ISBN</form:label>
+		<form:input path="ISBN"/>
+		<br>
+		
+		<form:label path="publication"> Publication</form:label>
+		<form:input path="publication"/>
+		<br>
+		
+		<form:label path="category"> Category</form:label>
+		<form:input path="category"/>
+		<br>
+		
+		<form:label path="price"> price</form:label>
+		<form:input path="price"/>
+		<br>
+		
+		<form:label path="stockCount"> stockCount</form:label>
+		<form:input path="stockCount"/>
+		<br>
+		
+		<form:label path="authors"> Select Authors</form:label>
+		<form:checkboxes items="${authors}" path="authors"/>
+		
+		
+		<form:button>enter book</form:button>
+	</form:form>
+	<a href="signup.html">Sign Up</a>
+</body>
+</html>

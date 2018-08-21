@@ -1,0 +1,8 @@
+<html>
+<body>
+<h2>Hello World!</h2>
+<a href="ShowAllProducts">Show all</a>
+<a href="ShowByCate">Show by category</a>
+<a href="ShowByBrand1">Show by brand</a>
+</body>
+</html>

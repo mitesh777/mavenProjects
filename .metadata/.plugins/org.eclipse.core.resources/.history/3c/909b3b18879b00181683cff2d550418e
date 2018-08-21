@@ -1,0 +1,37 @@
+package com.pratian.BankApp.client;
+
+import java.util.Date;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.pratian.BankApp.account.AccountManager;
+import com.pratian.BankApp.account.AccountType;
+import com.pratian.BankApp.account.IAccount;
+import com.pratian.BankApp.account.PriviligeType;
+import com.pratian.BankApp.dao.AccountDAO;
+import com.pratian.BankApp.exceptions.InActiveAccountException;
+
+public class ClientAccount {
+	public static void main(String[] args) {
+		//add account
+		AccountManager manager = new AccountManager();
+		IAccount acc = manager.createAccount("name1", "1234", new Date(), 1234.51, PriviligeType.GOLD, AccountType.CURRENT);
+		IAccount acc2 = manager.createAccount("name2", "1235", new Date(), 2123.51, PriviligeType.PREMIUM, AccountType.SAVINGS);
+		IAccount acc3 = manager.createAccount("name3", "1236", new Date(), 61234.51, PriviligeType.GOLD, AccountType.CURRENT);
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("EcommerceApp");
+		AccountDAO dao = new AccountDAO(factory);
+//		dao.persistAccount(acc);
+//		dao.persistAccount(acc2);
+//		dao.persistAccount(acc3);
+		IAccount account = dao.getAccount("CURHDFC123141");
+		System.out.println(account);
+		System.out.println(account.getAccTypes());
+		try {
+			manager.depositToAccount(account, 11);
+		} catch (InActiveAccountException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

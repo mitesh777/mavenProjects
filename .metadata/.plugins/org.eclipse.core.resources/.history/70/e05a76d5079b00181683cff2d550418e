@@ -1,0 +1,110 @@
+package com.pratian.BankApp.account;
+
+import java.util.Date;
+import java.util.Random;
+
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name="Account_type")	
+public abstract class Account implements IAccount {
+	@Id
+	protected String accNo;
+	protected String name;
+	protected String pin;
+	protected boolean active;
+	protected Date dateOfOpening;
+	protected double balance;
+	protected PriviligeType privligeType;
+	
+	protected static int accNumbers = 123141;
+	public String getAccNo() {
+		return accNo;
+	}
+	public void setAccNo(String accNo) {
+		this.accNo = accNo;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPin() {
+		return pin;
+	}
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	public Date getDateOfOpening() {
+		return dateOfOpening;
+	}
+	public void setDateOfOpening(Date dateOfOpening) {
+		this.dateOfOpening = dateOfOpening;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public PriviligeType getPrivligeType() {
+		return privligeType;
+	}
+	public void setPrivligeType(PriviligeType privligeType) {
+		this.privligeType = privligeType;
+	}
+	
+	
+	
+	public Account(String name, String pin, Date dateOfOpening, double balance, PriviligeType privligeType) {
+		super();
+		this.name = name;
+		this.pin = pin;
+		this.dateOfOpening = dateOfOpening;
+		this.balance = balance;
+		this.privligeType = privligeType;
+	}
+	
+	public Account() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String generateAccNumber() {
+
+		
+		String accNo1 = "HDFC"+accNumbers;
+		++accNumbers;
+		return accNo1;
+	}
+	
+	public void close() {
+		
+//		accNo = "HDFC"+accNumbers;
+//		++accNumbers;
+		active=false;
+	}
+	
+	public void deposit(double amount) {
+		// TODO Auto-generated method stub
+		balance+=amount;
+	}
+	
+
+	public void withdraw(double amount) {
+		// TODO Auto-generated method stub
+		balance-=amount;
+	}
+	
+}

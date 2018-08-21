@@ -1,0 +1,39 @@
+package com.pratian.libraryapp.controllers;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.pratian.libraryapp.model.Author;
+import com.pratian.libraryapp.model.Book;
+import com.pratian.libraryapp.model.User;
+import com.pratian.libraryapp.services.LibraryService;
+
+@Controller
+public class BookController {
+	@Autowired
+	LibraryService service;
+	
+	@RequestMapping(value = "/addBook.html")
+	public String addBook(Model model) {
+		Book book = new Book();
+		model.addAttribute("bookObj", book);
+		System.out.println("in addBook get");
+		return "addBook";
+	}
+	@RequestMapping(value = "/addBook.html", method=RequestMethod.POST)
+	public String addBook(@ModelAttribute("bookObj") Book book, HttpServletRequest request, Model model) {
+		
+		return "addBook";
+	}
+	@ModelAttribute("authors")
+	public java.util.List<Author> getAuthors(){
+		
+		return service.getAllAuthors();
+	}
+}
